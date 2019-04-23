@@ -56,7 +56,12 @@ namespace ProjetoBiblioteca
                     leitor.SalvarLeitor(strNome, strEndereco, intNumero, strTelefone, strCPF);
 
                     MessageBox.Show("LEITOR CADASTRADO COM SUCESSO!");
-
+                    txtNome.Clear();
+                    txtEndereco.Clear();
+                    txtNumber.Clear();
+                    txtTelefone.Clear();
+                    txtCPF.Clear();
+                    txtNome.Focus();
                 }
                 catch (System.FormatException)
                 {
@@ -69,6 +74,16 @@ namespace ProjetoBiblioteca
                 MessageBox.Show("Verifique se todos os campos foram preenchidos!");
                 txtNome.Focus();
             }
+        }
+
+        private void LimparCampo(object sender, EventArgs e)
+        {
+            txtNome.Clear();
+            txtEndereco.Clear();
+            txtNumber.Clear();
+            txtTelefone.Clear();
+            txtCPF.Clear();
+            txtNome.Focus();
         }
     }
 }
