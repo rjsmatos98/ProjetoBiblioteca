@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace ProjetoBiblioteca
 {
-    public partial class Form1 : Form
+    public partial class Inicial : Form
     {
-        public Form1()
+        public Inicial()
         {
             InitializeComponent();
         }
 
-        private void leitorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CadastroLeitorClick(object sender, EventArgs e)
         {
-
+            CadastroLeitor frmCadastroLeitor = new CadastroLeitor();
+            frmCadastroLeitor.Show();
         }
     }
 }
