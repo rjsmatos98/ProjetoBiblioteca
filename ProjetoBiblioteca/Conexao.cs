@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -9,21 +10,17 @@ namespace ProjetoBiblioteca
 {
     class Conexao
     {
-        SqlConnection con;
-        public SqlConnection AbrirConexao()
+        MySqlConnection con;
+        public MySqlConnection AbrirConexao()
         {
-            con = new SqlConnection
-            {
-                ConnectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=E:\Dados Pessoais\Desktop\Udemy\C# Essencial\Biblioteca\ProjetoBiblioteca\ProjetoBiblioteca\bdbiblioteca.mdf;Integrated Security=True;Connect Timeout=30"
-            };
+            con = new MySqlConnection("server=localhost;user id=jrdev;password=Pass*JR;persistsecurityinfo=True;database=bdbiblioteca");
             con.Open();
             return con;
         }
 
-        public void FecharConexao(SqlConnection con)
+        public void FecharConexao(MySqlConnection con)
         {
             con.Close();
         }
-
     }
 }

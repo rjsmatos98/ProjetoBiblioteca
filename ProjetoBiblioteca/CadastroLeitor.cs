@@ -1,7 +1,9 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -35,6 +37,23 @@ namespace ProjetoBiblioteca
         private void CadastroLeitor_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void SalvarLeitor(object sender, EventArgs e)
+        {
+            string strNome = txtNome.Text;
+            string strEndereco = txtEndereco.Text;
+            int intNumero = Convert.ToInt32(txtNumber.Text);
+            string strTelefone = txtTelefone.Text;
+            string strCPF = txtCPF.Text;
+
+
+
+            LeitorBD leitor = new LeitorBD();
+
+            leitor.SalvarLeitor(strNome, strEndereco, intNumero, strTelefone, strCPF);
+
+            MessageBox.Show("LEITOR CADASTRADO COM SUCESSO!");
         }
     }
 }
