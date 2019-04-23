@@ -41,19 +41,34 @@ namespace ProjetoBiblioteca
 
         private void SalvarLeitor(object sender, EventArgs e)
         {
-            string strNome = txtNome.Text;
-            string strEndereco = txtEndereco.Text;
-            int intNumero = Convert.ToInt32(txtNumber.Text);
-            string strTelefone = txtTelefone.Text;
-            string strCPF = txtCPF.Text;
+            if ((txtNome.Text != "") && (txtEndereco.Text != "") && (txtNumber.Text != "") && (txtTelefone.Text != "") && (txtCPF.Text != ""))
+            {
+                try
+                {
+                    string strNome = txtNome.Text;
+                    string strEndereco = txtEndereco.Text;
+                    int intNumero = Convert.ToInt32(txtNumber.Text);
+                    string strTelefone = txtTelefone.Text;
+                    string strCPF = txtCPF.Text;
 
+                    LeitorBD leitor = new LeitorBD();
 
+                    leitor.SalvarLeitor(strNome, strEndereco, intNumero, strTelefone, strCPF);
 
-            LeitorBD leitor = new LeitorBD();
+                    MessageBox.Show("LEITOR CADASTRADO COM SUCESSO!");
 
-            leitor.SalvarLeitor(strNome, strEndereco, intNumero, strTelefone, strCPF);
-
-            MessageBox.Show("LEITOR CADASTRADO COM SUCESSO!");
+                }
+                catch (System.FormatException)
+                {
+                    MessageBox.Show("O campo Nº só pode ser preenchido com números");
+                    txtNumber.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Verifique se todos os campos foram preenchidos!");
+                txtNome.Focus();
+            }
         }
     }
 }
