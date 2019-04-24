@@ -22,5 +22,11 @@ namespace ProjetoBiblioteca
             CadastroLeitor frmCadastroLeitor = new CadastroLeitor();
             frmCadastroLeitor.Show();
         }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarLeitor frmConsultaLeitor = new ConsultarLeitor();
+            frmConsultaLeitor.Show();
+        }
     }
 }

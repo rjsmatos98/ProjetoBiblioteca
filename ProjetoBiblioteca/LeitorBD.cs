@@ -18,7 +18,7 @@ namespace ProjetoBiblioteca
             con = banco.AbrirConexao();
 
 
-            string inserir = @"insert into Leitor (Nome, Endereco, Numero, Telefone, CPF) values ('" + strNome + "','" + strEndereco + "','" + intNumero + "','" + strCPF + "','" + strTelefone + "')";
+            string inserir = @"insert into Leitor (Nome, Endereco, Numero, Telefone, CPF) values ('" + strNome + "','" + strEndereco + "','" + intNumero + "','" + strTelefone + "','" + strCPF + "')";
 
 
             MySqlCommand _cmd = new MySqlCommand(inserir, con);
@@ -30,6 +30,18 @@ namespace ProjetoBiblioteca
             //Fecha a conexão
 
             con.Close();
+        }
+        public MySqlDataAdapter ConsultarLeitor(string strNome)
+        {
+            MySqlConnection con;
+            con = banco.AbrirConexao();
+            string selecionar;
+
+            selecionar = @"SELECT Nome, Endereco, Numero, Telefone, CPF FROM Leitor where Nome like '%" + strNome + "%'";
+            MySqlDataAdapter adaptador = new MySqlDataAdapter(selecionar, con);
+
+            con.Close();
+            return adaptador;
         }
     }
 }
