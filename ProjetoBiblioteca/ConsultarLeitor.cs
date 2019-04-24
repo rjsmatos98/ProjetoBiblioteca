@@ -13,6 +13,8 @@ namespace ProjetoBiblioteca
 {
     public partial class ConsultarLeitor : Form
     {
+        LeitorBD leitor = new LeitorBD();
+
         public ConsultarLeitor()
         {
             InitializeComponent();
@@ -20,14 +22,25 @@ namespace ProjetoBiblioteca
 
         private void TxtLeitor_TextChanged(object sender, EventArgs e)
         {
-            LeitorBD leitor = new LeitorBD();
-            Conexao banco = new Conexao();
-
             string strNome = txtLeitor.Text;
 
             DataTable tabela = new DataTable();
             leitor.ConsultarLeitor(strNome).Fill(tabela);
             dgvLeitores.DataSource = tabela;
+        }
+
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Tem Certeza Que Deseja Excluir?", "Atenção",
+         MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string strNome = txtLeitor.Text;
+
+                DataTable tabela = new DataTable();
+                leitor.ExcluirLeitor(strNome).Fill(tabela);
+                dgvLeitores.DataSource = tabela;
+                txtLeitor.Clear();
+            }
         }
     }
 }

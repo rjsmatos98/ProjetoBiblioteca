@@ -17,9 +17,7 @@ namespace ProjetoBiblioteca
         {
             con = banco.AbrirConexao();
 
-
             string inserir = @"insert into Leitor (Nome, Endereco, Numero, Telefone, CPF) values ('" + strNome + "','" + strEndereco + "','" + intNumero + "','" + strTelefone + "','" + strCPF + "')";
-
 
             MySqlCommand _cmd = new MySqlCommand(inserir, con);
 
@@ -33,7 +31,6 @@ namespace ProjetoBiblioteca
         }
         public MySqlDataAdapter ConsultarLeitor(string strNome)
         {
-            MySqlConnection con;
             con = banco.AbrirConexao();
             string selecionar;
 
@@ -42,6 +39,22 @@ namespace ProjetoBiblioteca
 
             con.Close();
             return adaptador;
+        }
+        public MySqlDataAdapter ExcluirLeitor(string strNome)
+        {
+            con = banco.AbrirConexao();
+            string deletar = @"DELETE FROM Leitor WHERE Nome='" + strNome + "';";
+
+            MySqlCommand _cmd = new MySqlCommand(deletar, con);
+
+            _cmd.ExecuteNonQuery();
+
+            string selecionar = @"SELECT Nome, Endereco, Numero, Telefone, CPF FROM Leitor";
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(selecionar, con);
+
+            con.Close();
+            return adapter;
         }
     }
 }

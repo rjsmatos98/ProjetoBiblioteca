@@ -32,6 +32,7 @@
             this.lbLeitor = new System.Windows.Forms.Label();
             this.txtLeitor = new System.Windows.Forms.TextBox();
             this.dgvLeitores = new System.Windows.Forms.DataGridView();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLeitores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,17 +60,31 @@
             this.dgvLeitores.AllowUserToAddRows = false;
             this.dgvLeitores.AllowUserToDeleteRows = false;
             this.dgvLeitores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLeitores.Location = new System.Drawing.Point(12, 72);
+            this.dgvLeitores.Location = new System.Drawing.Point(12, 50);
             this.dgvLeitores.Name = "dgvLeitores";
             this.dgvLeitores.ReadOnly = true;
-            this.dgvLeitores.Size = new System.Drawing.Size(505, 150);
+            this.dgvLeitores.Size = new System.Drawing.Size(505, 171);
             this.dgvLeitores.TabIndex = 4;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExcluir.Location = new System.Drawing.Point(12, 227);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(67, 55);
+            this.btnExcluir.TabIndex = 5;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // ConsultarLeitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 233);
+            this.ClientSize = new System.Drawing.Size(529, 294);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.dgvLeitores);
             this.Controls.Add(this.txtLeitor);
             this.Controls.Add(this.lbLeitor);
@@ -89,5 +104,6 @@
         private System.Windows.Forms.Label lbLeitor;
         private System.Windows.Forms.TextBox txtLeitor;
         private System.Windows.Forms.DataGridView dgvLeitores;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }
