@@ -33,13 +33,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.livroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.incluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alterarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.excluirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.empréstimoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,8 +62,6 @@
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inserirToolStripMenuItem,
-            this.alterarToolStripMenuItem,
-            this.excluirToolStripMenuItem,
             this.consultarToolStripMenuItem});
             this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -77,26 +71,14 @@
             // inserirToolStripMenuItem
             // 
             this.inserirToolStripMenuItem.Name = "inserirToolStripMenuItem";
-            this.inserirToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.inserirToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.inserirToolStripMenuItem.Text = "Inserir";
             this.inserirToolStripMenuItem.Click += new System.EventHandler(this.CadastroLeitorClick);
-            // 
-            // alterarToolStripMenuItem
-            // 
-            this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
-            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.alterarToolStripMenuItem.Text = "Alterar";
-            // 
-            // excluirToolStripMenuItem
-            // 
-            this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
-            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.excluirToolStripMenuItem.Text = "Excluir";
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.consultarToolStripMenuItem.Text = "Consultar";
             this.consultarToolStripMenuItem.Click += new System.EventHandler(this.ConsultarToolStripMenuItem_Click);
             // 
@@ -104,8 +86,6 @@
             // 
             this.livroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.incluirToolStripMenuItem,
-            this.alterarToolStripMenuItem1,
-            this.excluirToolStripMenuItem1,
             this.consultarToolStripMenuItem1});
             this.livroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("livroToolStripMenuItem.Image")));
             this.livroToolStripMenuItem.Name = "livroToolStripMenuItem";
@@ -115,25 +95,14 @@
             // incluirToolStripMenuItem
             // 
             this.incluirToolStripMenuItem.Name = "incluirToolStripMenuItem";
-            this.incluirToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.incluirToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.incluirToolStripMenuItem.Text = "Incluir";
-            // 
-            // alterarToolStripMenuItem1
-            // 
-            this.alterarToolStripMenuItem1.Name = "alterarToolStripMenuItem1";
-            this.alterarToolStripMenuItem1.Size = new System.Drawing.Size(147, 26);
-            this.alterarToolStripMenuItem1.Text = "Alterar";
-            // 
-            // excluirToolStripMenuItem1
-            // 
-            this.excluirToolStripMenuItem1.Name = "excluirToolStripMenuItem1";
-            this.excluirToolStripMenuItem1.Size = new System.Drawing.Size(147, 26);
-            this.excluirToolStripMenuItem1.Text = "Excluir";
+            this.incluirToolStripMenuItem.Click += new System.EventHandler(this.incluirToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem1
             // 
             this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(147, 26);
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.consultarToolStripMenuItem1.Text = "Consultar";
             // 
             // empréstimoToolStripMenuItem
@@ -192,13 +161,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem inserirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem livroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem incluirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem empréstimoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inserirToolStripMenuItem1;
