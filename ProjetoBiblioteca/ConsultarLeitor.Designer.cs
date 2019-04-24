@@ -33,6 +33,7 @@
             this.txtLeitor = new System.Windows.Forms.TextBox();
             this.dgvLeitores = new System.Windows.Forms.DataGridView();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLeitores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +66,7 @@
             this.dgvLeitores.ReadOnly = true;
             this.dgvLeitores.Size = new System.Drawing.Size(505, 171);
             this.dgvLeitores.TabIndex = 4;
+            this.dgvLeitores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelecionarRegistro);
             // 
             // btnExcluir
             // 
@@ -79,11 +81,25 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAlterar.Location = new System.Drawing.Point(450, 227);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(67, 55);
+            this.btnAlterar.TabIndex = 6;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
+            // 
             // ConsultarLeitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(529, 294);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.dgvLeitores);
             this.Controls.Add(this.txtLeitor);
@@ -105,5 +121,6 @@
         private System.Windows.Forms.TextBox txtLeitor;
         private System.Windows.Forms.DataGridView dgvLeitores;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }

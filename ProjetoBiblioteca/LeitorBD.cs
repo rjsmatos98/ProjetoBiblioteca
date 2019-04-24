@@ -12,6 +12,7 @@ namespace ProjetoBiblioteca
         Conexao banco = new Conexao();
 
         MySqlConnection con;
+        MySqlCommand _cmd;
 
         public void SalvarLeitor(string strNome, string strEndereco, int intNumero, string strTelefone, string strCPF)
         {
@@ -19,7 +20,7 @@ namespace ProjetoBiblioteca
 
             string inserir = @"insert into Leitor (Nome, Endereco, Numero, Telefone, CPF) values ('" + strNome + "','" + strEndereco + "','" + intNumero + "','" + strTelefone + "','" + strCPF + "')";
 
-            MySqlCommand _cmd = new MySqlCommand(inserir, con);
+            _cmd = new MySqlCommand(inserir, con);
 
             // executa o comando
 
@@ -29,27 +30,45 @@ namespace ProjetoBiblioteca
 
             con.Close();
         }
+
+        public MySqlDataAdapter AlterarLeitor(int intId, string strNome, string strEndereco, int intNumero, string strTelefone, string strCPF)
+        {
+            con = banco.AbrirConexao();
+
+            string alterar = @"UPDATE leitor SET Nome = '" + strNome + "', Endereco = '" + strEndereco + "', Numero = " + intNumero.ToString() + ", Telefone = '" + strTelefone + "', CPF = '" + strCPF + "' WHERE Id_Leitor = " + intId.ToString();
+
+            _cmd = new MySqlCommand(alterar, con);
+            _cmd.ExecuteNonQuery();
+
+            string selecionar = @"SELECT Nome, Id_Leitor, Endereco, Numero, Telefone, CPF FROM Leitor";
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(selecionar, con);
+
+            con.Close();
+            return adapter;
+        }
+        
         public MySqlDataAdapter ConsultarLeitor(string strNome)
         {
             con = banco.AbrirConexao();
             string selecionar;
 
-            selecionar = @"SELECT Nome, Endereco, Numero, Telefone, CPF FROM Leitor where Nome like '%" + strNome + "%'";
+            selecionar = @"SELECT Nome, Id_Leitor, Endereco, Numero, Telefone, CPF FROM Leitor where Nome like '%" + strNome + "%'";
             MySqlDataAdapter adaptador = new MySqlDataAdapter(selecionar, con);
 
             con.Close();
             return adaptador;
         }
-        public MySqlDataAdapter ExcluirLeitor(string strNome)
+        public MySqlDataAdapter ExcluirLeitor(int codigoLeitor)
         {
             con = banco.AbrirConexao();
-            string deletar = @"DELETE FROM Leitor WHERE Nome='" + strNome + "';";
+            string deletar = @"DELETE FROM Leitor WHERE Id_Leitor='" + codigoLeitor + "';";
 
-            MySqlCommand _cmd = new MySqlCommand(deletar, con);
+            _cmd = new MySqlCommand(deletar, con);
 
             _cmd.ExecuteNonQuery();
 
-            string selecionar = @"SELECT Nome, Endereco, Numero, Telefone, CPF FROM Leitor";
+            string selecionar = @"SELECT Nome, Id_Leitor, Endereco, Numero, Telefone, CPF FROM Leitor";
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(selecionar, con);
 

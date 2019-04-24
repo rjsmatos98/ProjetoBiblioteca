@@ -23,7 +23,7 @@ namespace ProjetoBiblioteca
             frmCadastroLeitor.Show();
         }
 
-        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ConsultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultarLeitor frmConsultaLeitor = new ConsultarLeitor();
             frmConsultaLeitor.Show();
