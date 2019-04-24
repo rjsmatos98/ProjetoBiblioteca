@@ -104,6 +104,7 @@
             this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
             this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.consultarToolStripMenuItem1.Text = "Consultar";
+            this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
             // 
             // empréstimoToolStripMenuItem
             // 

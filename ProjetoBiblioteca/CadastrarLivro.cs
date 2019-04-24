@@ -73,15 +73,26 @@ namespace ProjetoBiblioteca
                 string strAutor = txtAutor.Text;
                 string strGenero = txtGenero.Text;
                 int intPaginas = Convert.ToInt32(txtPaginas.Text);
-                int intQuantidade = Convert.ToInt32(txtPaginas.Text);
+                int intQuantidade = Convert.ToInt32(txtQuantidade.Text);
 
                 livro.AlterarLivro(intId, strNome, strAutor, strGenero, intPaginas, intQuantidade);
                 MessageBox.Show("DADOS DO LIVRO ALTERADO COM SUCESSO!");
 
-                //ConsultarLeitor FormConsultarLeitor = new ConsultarLeitor();
-                //FormConsultarLeitor.Show();
+                ConsultarLivro frmConsultarLivro = new ConsultarLivro();
+                frmConsultarLivro.Show();
                 Close();
             }
+        }
+        public void ReceberDados(string strNome, int intId, string strAutor, string strGenero, int intPaginas, int intQuantidade)
+        {
+
+            txtId.Text = Convert.ToString(intId);
+            txtNome.Text = strNome;
+            txtAutor.Text = strAutor;
+            txtGenero.Text = strGenero;
+            txtPaginas.Text = Convert.ToString(intPaginas);
+            txtQuantidade.Text = Convert.ToString(intQuantidade);
+
         }
     }
 }

@@ -68,7 +68,7 @@
             this.txtAutor.Location = new System.Drawing.Point(74, 59);
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(290, 24);
-            this.txtAutor.TabIndex = 3;
+            this.txtAutor.TabIndex = 2;
             // 
             // label2
             // 
@@ -105,7 +105,7 @@
             this.txtGenero.Location = new System.Drawing.Point(438, 57);
             this.txtGenero.Name = "txtGenero";
             this.txtGenero.Size = new System.Drawing.Size(143, 26);
-            this.txtGenero.TabIndex = 5;
+            this.txtGenero.TabIndex = 3;
             // 
             // txtPaginas
             // 
@@ -113,7 +113,7 @@
             this.txtPaginas.Location = new System.Drawing.Point(74, 98);
             this.txtPaginas.Name = "txtPaginas";
             this.txtPaginas.Size = new System.Drawing.Size(99, 24);
-            this.txtPaginas.TabIndex = 7;
+            this.txtPaginas.TabIndex = 4;
             // 
             // label4
             // 
@@ -131,7 +131,7 @@
             this.txtQuantidade.Location = new System.Drawing.Point(265, 98);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(99, 24);
-            this.txtQuantidade.TabIndex = 9;
+            this.txtQuantidade.TabIndex = 5;
             // 
             // label5
             // 

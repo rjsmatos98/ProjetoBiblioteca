@@ -93,6 +93,12 @@
     <Compile Include="ConsultarLeitor.Designer.cs">
       <DependentUpon>ConsultarLeitor.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsultarLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarLivro.Designer.cs">
+      <DependentUpon>ConsultarLivro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarLeitor.resx">
       <DependentUpon>ConsultarLeitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarLivro.resx">
+      <DependentUpon>ConsultarLivro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicial.resx">
       <DependentUpon>Inicial.cs</DependentUpon>

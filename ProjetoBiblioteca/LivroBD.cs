@@ -37,8 +37,8 @@ namespace ProjetoBiblioteca
         {
             con = banco.AbrirConexao();
 
-            string alterar = @"UPDATE leitor SET Nome = '" + strNome + "'" +
-                ", Autor = '" + strNome + "', Genero = '" + strGenero + "'" +
+            string alterar = @"UPDATE livro SET Nome = '" + strNome + "'" +
+                ", Autor = '" + strAutor + "', Genero = '" + strGenero + "'" +
                 ", Paginas = " + intPaginas.ToString() + ", Quantidade = " + intQuantidade.ToString() 
                 + " WHERE Id_Livro = " + intId.ToString();
 
@@ -53,7 +53,7 @@ namespace ProjetoBiblioteca
             return adapter;
         }
 
-        public MySqlDataAdapter ConsultarLeitor(string strNome)
+        public MySqlDataAdapter ConsultarLivro(string strNome)
         {
             con = banco.AbrirConexao();
             string selecionar;
@@ -64,7 +64,7 @@ namespace ProjetoBiblioteca
             con.Close();
             return adaptador;
         }
-        public MySqlDataAdapter ExcluirLeitor(int intId)
+        public MySqlDataAdapter ExcluirLivro(int intId)
         {
             con = banco.AbrirConexao();
             string deletar = @"DELETE FROM Livro WHERE Id_Livro=" + intId.ToString() + ";";

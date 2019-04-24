@@ -34,5 +34,11 @@ namespace ProjetoBiblioteca
             CadastrarLivro frmCadastrarLivro = new CadastrarLivro();
             frmCadastrarLivro.Show();
         }
+
+        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ConsultarLivro frmConsultarLivro = new ConsultarLivro();
+            frmConsultarLivro.Show();
+        }
     }
 }
