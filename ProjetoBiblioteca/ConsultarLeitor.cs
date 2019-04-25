@@ -62,7 +62,7 @@ namespace ProjetoBiblioteca
         private void BtnAlterar_Click(object sender, EventArgs e)
         {
 
-            CadastroLeitor FormCadastroLeitor = new CadastroLeitor();
+            CadastrarLeitor FormCadastroLeitor = new CadastrarLeitor();
             FormCadastroLeitor.ReceberDados(Nome, ID, Endereco, Numero, Telefone, CPF);
             FormCadastroLeitor.Show();
             Close();

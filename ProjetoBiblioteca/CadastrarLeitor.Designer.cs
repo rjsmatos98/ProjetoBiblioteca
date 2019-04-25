@@ -1,6 +1,6 @@
 ﻿namespace ProjetoBiblioteca
 {
-    partial class CadastroLeitor
+    partial class CadastrarLeitor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroLeitor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarLeitor));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
@@ -174,7 +174,7 @@
             this.txtId.TabIndex = 10;
             this.txtId.Visible = false;
             // 
-            // CadastroLeitor
+            // CadastrarLeitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -193,8 +193,8 @@
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "CadastroLeitor";
-            this.Text = "Cadastro de Leitores";
+            this.Name = "CadastrarLeitor";
+            this.Text = "Cadastra Leitores";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -19,7 +19,7 @@ namespace ProjetoBiblioteca
 
         private void CadastroLeitorClick(object sender, EventArgs e)
         {
-            CadastroLeitor frmCadastroLeitor = new CadastroLeitor();
+            CadastrarLeitor frmCadastroLeitor = new CadastrarLeitor();
             frmCadastroLeitor.Show();
         }
 
@@ -29,16 +29,34 @@ namespace ProjetoBiblioteca
             frmConsultaLeitor.Show();
         }
 
-        private void incluirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void IncluirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CadastrarLivro frmCadastrarLivro = new CadastrarLivro();
             frmCadastrarLivro.Show();
         }
 
-        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void ConsultarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ConsultarLivro frmConsultarLivro = new ConsultarLivro();
             frmConsultarLivro.Show();
+        }
+
+        private void InserirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CadastrarEmprestimo frmCadastrarEmprestimo = new CadastrarEmprestimo();
+            frmCadastrarEmprestimo.Show();
+        }
+
+        private void ExcluirToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Devolucao frmDevolucao = new Devolucao();
+            frmDevolucao.Show();
+        }
+
+        private void ConsultarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            ConsultarEmprestimo frmConsultarEmprestimo = new ConsultarEmprestimo();
+            frmConsultarEmprestimo.Show();
         }
     }
 }

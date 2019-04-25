@@ -95,16 +95,16 @@
             // incluirToolStripMenuItem
             // 
             this.incluirToolStripMenuItem.Name = "incluirToolStripMenuItem";
-            this.incluirToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.incluirToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.incluirToolStripMenuItem.Text = "Incluir";
-            this.incluirToolStripMenuItem.Click += new System.EventHandler(this.incluirToolStripMenuItem_Click);
+            this.incluirToolStripMenuItem.Click += new System.EventHandler(this.IncluirToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem1
             // 
             this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(147, 26);
             this.consultarToolStripMenuItem1.Text = "Consultar";
-            this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
+            this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.ConsultarToolStripMenuItem1_Click);
             // 
             // empréstimoToolStripMenuItem
             // 
@@ -120,20 +120,23 @@
             // inserirToolStripMenuItem1
             // 
             this.inserirToolStripMenuItem1.Name = "inserirToolStripMenuItem1";
-            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(147, 26);
+            this.inserirToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.inserirToolStripMenuItem1.Text = "Inserir";
+            this.inserirToolStripMenuItem1.Click += new System.EventHandler(this.InserirToolStripMenuItem1_Click);
             // 
             // consultarToolStripMenuItem2
             // 
             this.consultarToolStripMenuItem2.Name = "consultarToolStripMenuItem2";
-            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(147, 26);
+            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
             this.consultarToolStripMenuItem2.Text = "Consultar";
+            this.consultarToolStripMenuItem2.Click += new System.EventHandler(this.ConsultarToolStripMenuItem2_Click);
             // 
             // excluirToolStripMenuItem2
             // 
             this.excluirToolStripMenuItem2.Name = "excluirToolStripMenuItem2";
-            this.excluirToolStripMenuItem2.Size = new System.Drawing.Size(147, 26);
-            this.excluirToolStripMenuItem2.Text = "Excluir";
+            this.excluirToolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
+            this.excluirToolStripMenuItem2.Text = "Devolução";
+            this.excluirToolStripMenuItem2.Click += new System.EventHandler(this.ExcluirToolStripMenuItem2_Click);
             // 
             // contextMenuStrip1
             // 

@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CadastrarEmprestimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarEmprestimo.Designer.cs">
+      <DependentUpon>CadastrarEmprestimo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadastrarLivro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,11 +87,17 @@
       <DependentUpon>CadastrarLivro.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexao.cs" />
-    <Compile Include="CadastroLeitor.cs">
+    <Compile Include="CadastrarLeitor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroLeitor.Designer.cs">
-      <DependentUpon>CadastroLeitor.cs</DependentUpon>
+    <Compile Include="CadastrarLeitor.Designer.cs">
+      <DependentUpon>CadastrarLeitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultarEmprestimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarEmprestimo.Designer.cs">
+      <DependentUpon>ConsultarEmprestimo.cs</DependentUpon>
     </Compile>
     <Compile Include="ConsultarLeitor.cs">
       <SubType>Form</SubType>
@@ -99,6 +111,14 @@
     <Compile Include="ConsultarLivro.Designer.cs">
       <DependentUpon>ConsultarLivro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Devolucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Devolucao.Designer.cs">
+      <DependentUpon>Devolucao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevolucaoBD.cs" />
+    <Compile Include="EmprestimoBD.cs" />
     <Compile Include="Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,17 +129,26 @@
     <Compile Include="LivroBD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CadastrarEmprestimo.resx">
+      <DependentUpon>CadastrarEmprestimo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastrarLivro.resx">
       <DependentUpon>CadastrarLivro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastroLeitor.resx">
-      <DependentUpon>CadastroLeitor.cs</DependentUpon>
+    <EmbeddedResource Include="CadastrarLeitor.resx">
+      <DependentUpon>CadastrarLeitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarEmprestimo.resx">
+      <DependentUpon>ConsultarEmprestimo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarLeitor.resx">
       <DependentUpon>ConsultarLeitor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarLivro.resx">
       <DependentUpon>ConsultarLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Devolucao.resx">
+      <DependentUpon>Devolucao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicial.resx">
       <DependentUpon>Inicial.cs</DependentUpon>

@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace ProjetoBiblioteca
 {
-    public partial class CadastroLeitor : Form
+    public partial class CadastrarLeitor : Form
     {
         LeitorBD leitor = new LeitorBD();
-        public CadastroLeitor()
+        public CadastrarLeitor()
         {
             InitializeComponent();
         }
