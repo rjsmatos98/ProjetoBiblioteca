@@ -8,29 +8,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using DTO;
 
-namespace ProjetoBiblioteca
+namespace UI
 {
     public partial class ConsultarLeitor : Form
     {
-        LeitorBD leitor = new LeitorBD();
-        int ID, Numero;
-        string Nome, Endereco, Telefone, CPF;
+        private Leitor leitor;
+        private LeitorBLL leitorBLL;
         public ConsultarLeitor()
         {
             InitializeComponent();
+            leitorBLL = new LeitorBLL();
+            leitor = new Leitor();
+            AtualizarGrid();
             txtLeitor.Focus();
-            btnExcluir.Enabled = false;
-            btnAlterar.Enabled = false;
         }
 
         private void TxtLeitor_TextChanged(object sender, EventArgs e)
         {
-            string strNome = txtLeitor.Text;
+            btnExcluir.Enabled = false;
+            btnAlterar.Enabled = false;
+            AtualizarGrid();
+        }
 
-            DataTable tabela = new DataTable();
-            leitor.ConsultarLeitor(strNome).Fill(tabela);
-            dgvLeitores.DataSource = tabela;
+        private void ClickButton(object sender, EventArgs e)
+        {
+            btnExcluir.Enabled = false;
+            btnAlterar.Enabled = false;
         }
 
         private void BtnExcluir_Click(object sender, EventArgs e)
@@ -39,7 +45,7 @@ namespace ProjetoBiblioteca
          MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 DataTable tabela = new DataTable();
-                leitor.ExcluirLeitor(ID).Fill(tabela);
+                leitorBLL.ExcluirLeitor(leitor.ID).Fill(tabela);
                 dgvLeitores.DataSource = tabela;
                 txtLeitor.Clear();
                 btnExcluir.Enabled = false;
@@ -49,23 +55,30 @@ namespace ProjetoBiblioteca
 
         private void SelecionarRegistro(object sender, DataGridViewCellEventArgs e)
         {
-            Nome = Convert.ToString(dgvLeitores.Rows[e.RowIndex].Cells[0].Value);
-            ID = Convert.ToInt32(dgvLeitores.Rows[e.RowIndex].Cells[1].Value);
-            Endereco = Convert.ToString(dgvLeitores.Rows[e.RowIndex].Cells[2].Value);
-            Numero = Convert.ToInt32(dgvLeitores.Rows[e.RowIndex].Cells[3].Value);
-            Telefone = Convert.ToString(dgvLeitores.Rows[e.RowIndex].Cells[4].Value);
-            CPF = Convert.ToString(dgvLeitores.Rows[e.RowIndex].Cells[5].Value);
+            leitor.ID = Convert.ToInt32(dgvLeitores.Rows[e.RowIndex].Cells[0].Value);
+            leitor.Nome = Convert.ToString(dgvLeitores.Rows[e.RowIndex].Cells[1].Value);
+            leitor.Endereco = Convert.ToString(dgvLeitores.Rows[e.RowIndex].Cells[2].Value);
+            leitor.Numero = Convert.ToInt32(dgvLeitores.Rows[e.RowIndex].Cells[3].Value);
+            leitor.Telefone = Convert.ToString(dgvLeitores.Rows[e.RowIndex].Cells[4].Value);
+            leitor.CPF = Convert.ToString(dgvLeitores.Rows[e.RowIndex].Cells[5].Value);
             btnExcluir.Enabled = true;
             btnAlterar.Enabled = true;
+
         }
 
         private void BtnAlterar_Click(object sender, EventArgs e)
         {
 
             CadastrarLeitor FormCadastroLeitor = new CadastrarLeitor();
-            FormCadastroLeitor.ReceberDados(Nome, ID, Endereco, Numero, Telefone, CPF);
+            FormCadastroLeitor.ReceberDados(leitor);
             FormCadastroLeitor.Show();
             Close();
+        }
+
+        public void AtualizarGrid()
+        {
+            dgvLeitores.DataSource = null;
+            dgvLeitores.DataSource = leitorBLL.ConsultarLeitor(txtLeitor.Text);
         }
     }
 }

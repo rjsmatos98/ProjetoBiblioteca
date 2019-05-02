@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoBiblioteca
+namespace DAL
 {
     class Conexao
     {
-        MySqlConnection con;
+        private MySqlConnection con;
         public MySqlConnection AbrirConexao()
         {
             con = new MySqlConnection("server=localhost;user id=jrdev;password=Pass*JR;persistsecurityinfo=True;database=bdbiblioteca");
@@ -18,9 +18,11 @@ namespace ProjetoBiblioteca
             return con;
         }
 
-        public void FecharConexao(MySqlConnection con)
+        public MySqlConnection FecharConexao()
         {
+            con = new MySqlConnection("server=localhost;user id=jrdev;password=Pass*JR;persistsecurityinfo=True;database=bdbiblioteca");
             con.Close();
+            return con;
         }
     }
 }

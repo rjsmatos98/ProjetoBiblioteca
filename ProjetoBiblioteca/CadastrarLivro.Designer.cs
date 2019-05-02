@@ -1,4 +1,4 @@
-﻿namespace ProjetoBiblioteca
+﻿namespace UI
 {
     partial class CadastrarLivro
     {

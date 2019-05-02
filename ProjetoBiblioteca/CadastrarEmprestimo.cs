@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,34 +8,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 
-namespace ProjetoBiblioteca
+namespace UI
 {
     public partial class CadastrarEmprestimo : Form
     {
-        int selecao, intIDLeitor, intIDLivro;
-        string strLeitor, strLivro, strRetirada, strDevolucao;
-        EmprestimoBD emprestimo = new EmprestimoBD();
-        LeitorBD leitor = new LeitorBD();
-        LivroBD livro = new LivroBD();
+        int selecao;
+        Emprestimo emprestimo;
+        EmprestimoBLL emprestimoBLL;
+        LeitorBLL leitorBLL;
+        LivroBLL livroBLL;
+        public CadastrarEmprestimo()
+        {
+            InitializeComponent();
+            emprestimo = new Emprestimo();
+            emprestimoBLL = new EmprestimoBLL();
+            leitorBLL = new LeitorBLL();
+            livroBLL = new LivroBLL();
+            txtRetirada.Text = DateTime.Now.ToShortDateString();
+            txtDevolucao.Text = DateTime.Now.AddDays(7).ToShortDateString();
+        }
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
             if ((txtIDLivro.Text != "") && (txtIDLeitor.Text != ""))
             {
+                try
+                {
+                    emprestimo.Leitor.Nome = Convert.ToString(lblLeitor.Text);
+                    emprestimo.Livro.Nome = Convert.ToString(lblLivro.Text);
+                    emprestimo.Leitor.ID = Convert.ToInt32(txtIDLeitor.Text);
+                    emprestimo.Livro.ID = Convert.ToInt32(txtIDLivro.Text);
+                    emprestimo.Retirada = txtRetirada.Text;
+                    emprestimo.Devolucao = txtDevolucao.Text;
 
+                    emprestimoBLL.SalvarEmprestimo(emprestimo);
 
-                strLeitor = lblLeitor.Text;
-                strLivro = lblLivro.Text;
-                intIDLeitor = Convert.ToInt32(txtIDLeitor.Text);
-                intIDLivro = Convert.ToInt32(txtIDLivro.Text);
-                strRetirada = txtRetirada.Text;
-                strDevolucao = txtDevolucao.Text;
-
-                emprestimo.SalvarEmprestimo(intIDLeitor, intIDLivro, strLeitor, strLivro, strRetirada, strDevolucao);
-
-                MessageBox.Show("Emprestimo cadastrado com Sucesso!");
-
+                    MessageBox.Show("Emprestimo cadastrado com Sucesso!");
+                }
+                catch (System.FormatException)
+                {
+                    MessageBox.Show("Verifique se algum campo está em branco");
+                }
             }
 
             else
@@ -44,58 +60,55 @@ namespace ProjetoBiblioteca
             }
         }
 
-        private void dgvLivrosLeitores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvLivrosLeitores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-        private void SelecionarRegistros(object sender, DataGridViewCellEventArgs e)
-        {
-            if (selecao == 1)
-            {
-
-                intIDLeitor = Convert.ToInt32(dgvLivrosLeitores.Rows[e.RowIndex].Cells[1].Value);
-                txtIDLeitor.Text = Convert.ToString(intIDLeitor);
-                strLeitor = Convert.ToString(dgvLivrosLeitores.Rows[e.RowIndex].Cells[0].Value);
-                lblLeitor.Text = strLeitor;
-
-            }
-
-            if (selecao == 2)
-            {
-
-                intIDLivro = Convert.ToInt32(dgvLivrosLeitores.Rows[e.RowIndex].Cells[1].Value);
-                txtIDLivro.Text = Convert.ToString(intIDLivro);
-                strLivro = Convert.ToString(dgvLivrosLeitores.Rows[e.RowIndex].Cells[0].Value);
-                lblLivro.Text = strLivro;
-
-            }
         }
 
         private void TxtLeitor_TextChanged(object sender, EventArgs e)
         {
-            strLeitor = txtLeitor.Text;
-            DataTable tabela = new DataTable();
-            leitor.ConsultarLeitor(strLeitor).Fill(tabela);
-            dgvLivrosLeitores.DataSource = tabela;
+            AtualizarGrid();
 
             selecao = 1;
         }
 
         private void TxtLivro_TextChanged(object sender, EventArgs e)
         {
-            strLivro = txtLivro.Text;
-            DataTable tabela = new DataTable();
-            livro.ConsultarLivro(strLivro).Fill(tabela);
-            dgvLivrosLeitores.DataSource = tabela;
+            AtualizarGrid();
 
             selecao = 2;
         }
-        public CadastrarEmprestimo()
+
+        private void SelecionarRegistros(object sender, DataGridViewCellEventArgs e)
         {
-            InitializeComponent();
-            txtRetirada.Text = DateTime.Now.ToShortDateString();
-            txtDevolucao.Text = DateTime.Now.AddDays(7).ToShortDateString();    
+            if (selecao == 1)
+            {
+                int intLeitorID = Convert.ToInt32(dgvLivrosLeitores.Rows[e.RowIndex].Cells[0].Value);
+                txtIDLeitor.Text = Convert.ToString(intLeitorID);
+                string strLeitor = Convert.ToString(dgvLivrosLeitores.Rows[e.RowIndex].Cells[1].Value);
+                lblLeitor.Text = strLeitor;
+            }
+
+            else if (selecao == 2)
+            {
+                int intLivroID = Convert.ToInt32(dgvLivrosLeitores.Rows[e.RowIndex].Cells[0].Value);
+                txtIDLivro.Text = Convert.ToString(intLivroID);
+                string strLivro = Convert.ToString(dgvLivrosLeitores.Rows[e.RowIndex].Cells[1].Value);
+                lblLivro.Text = strLivro;
+            }
+        }
+        public void AtualizarGrid()
+        {
+            if (selecao == 1)
+            {
+                dgvLivrosLeitores.DataSource = null;
+                dgvLivrosLeitores.DataSource = leitorBLL.ConsultarLeitor(txtLeitor.Text);
+            }
+            else if (selecao == 2)
+            {
+                dgvLivrosLeitores.DataSource = null;
+                dgvLivrosLeitores.DataSource = livroBLL.ConsultarLivros(txtLivro.Text);
+            }
         }
     }
 }

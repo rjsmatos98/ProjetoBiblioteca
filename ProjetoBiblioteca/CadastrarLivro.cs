@@ -7,15 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using BLL;
 
-namespace ProjetoBiblioteca
+namespace UI
 {
     public partial class CadastrarLivro : Form
     {
-        LivroBD livro = new LivroBD();
+        private Livro livro;
+        private LivroBLL livroBLL;
         public CadastrarLivro()
         {
             InitializeComponent();
+            livroBLL = new LivroBLL();
+            livro = new Livro();
+            txtNome.Focus();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -32,13 +38,13 @@ namespace ProjetoBiblioteca
 
                     try
                     {
-                        string strNome = txtNome.Text;
-                        string strAutor = txtAutor.Text;
-                        string strGenero = txtGenero.Text;
-                        int intPaginas = Convert.ToInt32(txtPaginas.Text);
-                        int intQuantidade = Convert.ToInt32(txtQuantidade.Text);
+                        livro.Nome = txtNome.Text;
+                        livro.Autor = txtAutor.Text;
+                        livro.Genero = txtGenero.Text;
+                        livro.Paginas = Convert.ToInt32(txtPaginas.Text);
+                        livro.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
-                        livro.SalvarLivro(strNome, strAutor, strGenero, intPaginas, intQuantidade);
+                        livroBLL.SalvarLivro(livro);
 
                         //Exibe Mensagem!!
 
@@ -68,14 +74,14 @@ namespace ProjetoBiblioteca
             }
             else
             {
-                int intId = Convert.ToInt32(txtId.Text);
-                string strNome = txtNome.Text;
-                string strAutor = txtAutor.Text;
-                string strGenero = txtGenero.Text;
-                int intPaginas = Convert.ToInt32(txtPaginas.Text);
-                int intQuantidade = Convert.ToInt32(txtQuantidade.Text);
+                livro.ID = Convert.ToInt32(txtId.Text);
+                livro.Nome = txtNome.Text;
+                livro.Autor = txtAutor.Text;
+                livro.Genero = txtGenero.Text;
+                livro.Paginas = Convert.ToInt32(txtPaginas.Text);
+                livro.Quantidade = Convert.ToInt32(txtQuantidade.Text);
 
-                livro.AlterarLivro(intId, strNome, strAutor, strGenero, intPaginas, intQuantidade);
+                livroBLL.AlterarLivro(livro);
                 MessageBox.Show("DADOS DO LIVRO ALTERADO COM SUCESSO!");
 
                 ConsultarLivro frmConsultarLivro = new ConsultarLivro();
@@ -83,15 +89,15 @@ namespace ProjetoBiblioteca
                 Close();
             }
         }
-        public void ReceberDados(string strNome, int intId, string strAutor, string strGenero, int intPaginas, int intQuantidade)
+        public void ReceberDados(Livro livro)
         {
 
-            txtId.Text = Convert.ToString(intId);
-            txtNome.Text = strNome;
-            txtAutor.Text = strAutor;
-            txtGenero.Text = strGenero;
-            txtPaginas.Text = Convert.ToString(intPaginas);
-            txtQuantidade.Text = Convert.ToString(intQuantidade);
+            txtId.Text = Convert.ToString(livro.ID);
+            txtNome.Text = livro.Nome;
+            txtAutor.Text = livro.Autor;
+            txtGenero.Text = livro.Genero;
+            txtPaginas.Text = Convert.ToString(livro.Paginas);
+            txtQuantidade.Text = Convert.ToString(livro.Quantidade);
 
         }
     }

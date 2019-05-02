@@ -8,16 +8,21 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BLL;
+using DTO;
 using System.Windows.Forms;
 
-namespace ProjetoBiblioteca
+namespace UI
 {
     public partial class CadastrarLeitor : Form
     {
-        LeitorBD leitor = new LeitorBD();
+        Leitor leitor;
+        LeitorBLL leitorBLL;
         public CadastrarLeitor()
         {
             InitializeComponent();
+            leitorBLL = new LeitorBLL();
+            leitor = new Leitor();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -48,13 +53,13 @@ namespace ProjetoBiblioteca
                 {
                     try
                     {
-                        string strNome = txtNome.Text;
-                        string strEndereco = txtEndereco.Text;
-                        int intNumero = Convert.ToInt32(txtNumber.Text);
-                        string strTelefone = txtTelefone.Text;
-                        string strCPF = txtCPF.Text;
+                        leitor.Nome = txtNome.Text;
+                        leitor.Endereco = txtEndereco.Text;
+                        leitor.Numero = Convert.ToInt32(txtNumber.Text);
+                        leitor.Telefone = txtTelefone.Text;
+                        leitor.CPF = txtCPF.Text;
 
-                        leitor.SalvarLeitor(strNome, strEndereco, intNumero, strTelefone, strCPF);
+                        leitorBLL.IncluirLeitor(leitor);
 
                         MessageBox.Show("LEITOR CADASTRADO COM SUCESSO!");
                         txtId.Clear();
@@ -79,14 +84,14 @@ namespace ProjetoBiblioteca
             }
             else
             {
-                int intId = Convert.ToInt32(txtId.Text);
-                string strNome = txtNome.Text;
-                string strEndereco = txtEndereco.Text;
-                int intNumero = Convert.ToInt32(txtNumber.Text);
-                string strTelefone = txtTelefone.Text;
-                string strCPF = txtCPF.Text;
+                leitor.ID = int.Parse(txtId.Text);
+                leitor.Nome = txtNome.Text;
+                leitor.Endereco = txtEndereco.Text;
+                leitor.Numero = int.Parse(txtNumber.Text);
+                leitor.Telefone = txtTelefone.Text;
+                leitor.CPF = txtCPF.Text;
 
-                leitor.AlterarLeitor(intId, strNome, strEndereco, intNumero, strTelefone, strCPF);
+                leitorBLL.AtualizarLeitor(leitor);
                 MessageBox.Show("DADOS DO LEITOR ALTERADO COM SUCESSO!");
 
                 ConsultarLeitor FormConsultarLeitor = new ConsultarLeitor();
@@ -106,15 +111,15 @@ namespace ProjetoBiblioteca
             txtNome.Focus();
         }
 
-        public void ReceberDados(string strNome, int intId, string strEndereco, int intNumero, string strTelefone, string strCPF)
+        public void ReceberDados(Leitor leitor)
         {
 
-            txtId.Text = Convert.ToString(intId);
-            txtNome.Text = strNome;
-            txtEndereco.Text = strEndereco;
-            txtNumber.Text = Convert.ToString(intNumero);
-            txtTelefone.Text = strTelefone;
-            txtCPF.Text = strCPF;
+            txtId.Text = Convert.ToString(leitor.ID);
+            txtNome.Text = leitor.Nome;
+            txtEndereco.Text = leitor.Endereco;
+            txtNumber.Text = Convert.ToString(leitor.Numero);
+            txtTelefone.Text = leitor.Telefone;
+            txtCPF.Text = leitor.CPF;
 
         }
     }

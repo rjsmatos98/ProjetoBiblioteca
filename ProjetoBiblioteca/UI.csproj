@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{26E3B826-0CE8-47C2-8DD8-DB2892A5C934}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ProjetoBiblioteca</RootNamespace>
-    <AssemblyName>ProjetoBiblioteca</AssemblyName>
+    <RootNamespace>UI</RootNamespace>
+    <AssemblyName>UI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -86,7 +86,6 @@
     <Compile Include="CadastrarLivro.Designer.cs">
       <DependentUpon>CadastrarLivro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Conexao.cs" />
     <Compile Include="CadastrarLeitor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,16 +116,12 @@
     <Compile Include="Devolucao.Designer.cs">
       <DependentUpon>Devolucao.cs</DependentUpon>
     </Compile>
-    <Compile Include="DevolucaoBD.cs" />
-    <Compile Include="EmprestimoBD.cs" />
     <Compile Include="Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inicial.Designer.cs">
       <DependentUpon>Inicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="LeitorBD.cs" />
-    <Compile Include="LivroBD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CadastrarEmprestimo.resx">
@@ -161,6 +156,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -187,6 +183,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{44da33f3-f938-458b-94d0-04b5f7324c75}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{622d1fa4-7b1a-44fc-8a29-16426694b157}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

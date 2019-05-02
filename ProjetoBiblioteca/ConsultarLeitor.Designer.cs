@@ -1,4 +1,4 @@
-﻿namespace ProjetoBiblioteca
+﻿namespace UI
 {
     partial class ConsultarLeitor
     {
@@ -70,6 +70,7 @@
             // 
             // btnExcluir
             // 
+            this.btnExcluir.Enabled = false;
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExcluir.Location = new System.Drawing.Point(12, 227);
@@ -83,6 +84,7 @@
             // 
             // btnAlterar
             // 
+            this.btnAlterar.Enabled = false;
             this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnAlterar.Location = new System.Drawing.Point(450, 227);
@@ -109,6 +111,7 @@
             this.MaximizeBox = false;
             this.Name = "ConsultarLeitor";
             this.Text = "Consultar Leitor";
+            this.Click += new System.EventHandler(this.ClickButton);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLeitores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

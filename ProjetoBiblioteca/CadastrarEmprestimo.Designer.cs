@@ -1,4 +1,4 @@
-﻿namespace ProjetoBiblioteca
+﻿namespace UI
 {
     partial class CadastrarEmprestimo
     {
@@ -157,7 +157,7 @@
             this.dgvLivrosLeitores.Size = new System.Drawing.Size(389, 141);
             this.dgvLivrosLeitores.TabIndex = 10;
             this.dgvLivrosLeitores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelecionarRegistros);
-            this.dgvLivrosLeitores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLivrosLeitores_CellContentClick);
+            this.dgvLivrosLeitores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLivrosLeitores_CellContentClick);
             // 
             // txtRetirada
             // 
