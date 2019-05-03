@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DTO;
 using MySql.Data.MySqlClient;
 
@@ -104,13 +105,20 @@ namespace DAL
         }
         public void ExcluirLeitor(int codigoLeitor)
         {
-            string deletar = @"DELETE FROM Leitor WHERE Id_Leitor='" + codigoLeitor + "';";
+            try
+            {
+                string deletar = @"DELETE FROM Leitor WHERE Id_Leitor='" + codigoLeitor + "';";
 
-            _cmd = new MySqlCommand(deletar, banco.AbrirConexao());
+                _cmd = new MySqlCommand(deletar, banco.AbrirConexao());
 
-            _cmd.ExecuteNonQuery();
+                _cmd.ExecuteNonQuery();
 
-            banco.FecharConexao();
+                banco.FecharConexao();
+            }
+            catch (MySqlException)
+            {
+                MessageBox.Show("O leitor selecionado tem emprestimos pendentes!");
+            }
         }
     }
 }

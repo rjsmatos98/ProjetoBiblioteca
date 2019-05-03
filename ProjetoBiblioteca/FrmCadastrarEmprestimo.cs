@@ -95,12 +95,20 @@ namespace UI
 
                 else if (selecao == 2)
                 {
-                    txtLivro.Clear();
-                    int intLivroID = Convert.ToInt32(dgvLivrosLeitores.Rows[e.RowIndex].Cells[0].Value);
-                    txtIDLivro.Text = Convert.ToString(intLivroID);
-                    string strLivro = Convert.ToString(dgvLivrosLeitores.Rows[e.RowIndex].Cells[1].Value);
-                    lblLivro.Text = strLivro;
-                    dgvLivrosLeitores.DataSource = null;
+                    int intQuantidade = Convert.ToInt32(dgvLivrosLeitores.Rows[e.RowIndex].Cells[5].Value);
+                    if (intQuantidade > 0)
+                    {
+                        txtLivro.Clear();
+                        int intLivroID = Convert.ToInt32(dgvLivrosLeitores.Rows[e.RowIndex].Cells[0].Value);
+                        txtIDLivro.Text = Convert.ToString(intLivroID);
+                        string strLivro = Convert.ToString(dgvLivrosLeitores.Rows[e.RowIndex].Cells[1].Value);
+                        lblLivro.Text = strLivro;
+                        dgvLivrosLeitores.DataSource = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("O livro selecionado está sem estoque!");
+                    }
                 }
             }
             catch (ArgumentOutOfRangeException)

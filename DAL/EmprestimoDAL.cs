@@ -23,6 +23,10 @@ namespace DAL
 
             _cmd = new MySqlCommand(insert, banco.AbrirConexao());
             _cmd.ExecuteNonQuery();
+
+            string update = @"UPDATE LIVRO SET QUANTIDADE=QUANTIDADE-1 WHERE ID_LIVRO="+emprestimo.Livro.ID.ToString();
+            _cmd = new MySqlCommand(update, banco.AbrirConexao());
+            _cmd.ExecuteNonQuery();
             banco.FecharConexao();
         }
 
