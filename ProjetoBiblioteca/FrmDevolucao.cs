@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class Devolucao : Form
+    public partial class FrmDevolucao : Form
     {
         Emprestimo emprestimo;
         EmprestimoBLL emprestimoBLL;
-        public Devolucao()
+        public FrmDevolucao()
         {
             InitializeComponent();
             emprestimo = new Emprestimo();

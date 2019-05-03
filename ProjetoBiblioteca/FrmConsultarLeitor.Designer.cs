@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class ConsultarLeitor
+    partial class FrmConsultarLeitor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarLeitor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarLeitor));
             this.lbLeitor = new System.Windows.Forms.Label();
             this.txtLeitor = new System.Windows.Forms.TextBox();
             this.dgvLeitores = new System.Windows.Forms.DataGridView();
@@ -96,7 +96,7 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
             // 
-            // ConsultarLeitor
+            // FrmConsultarLeitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,7 +109,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "ConsultarLeitor";
+            this.Name = "FrmConsultarLeitor";
             this.Text = "Consultar Leitor";
             this.Click += new System.EventHandler(this.ClickButton);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLeitores)).EndInit();

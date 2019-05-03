@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class ConsultarLivro
+    partial class FrmConsultarLivro
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarLivro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarLivro));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.dgvLivros = new System.Windows.Forms.DataGridView();
@@ -96,7 +96,7 @@
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.BtnAlterar_Click);
             // 
-            // ConsultarLivro
+            // FrmConsultarLivro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,7 +108,9 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ConsultarLivro";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FrmConsultarLivro";
             this.Text = "Consultar Livro";
             this.Load += new System.EventHandler(this.ConsultarLivro_Load);
             this.Click += new System.EventHandler(this.ClickButton);

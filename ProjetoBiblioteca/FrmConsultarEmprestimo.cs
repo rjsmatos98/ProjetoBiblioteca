@@ -12,11 +12,11 @@ using BLL;
 
 namespace UI
 {
-    public partial class ConsultarEmprestimo : Form
+    public partial class FrmConsultarEmprestimo : Form
     {
         Emprestimo emprestimo;
         EmprestimoBLL emprestimoBLL;
-        public ConsultarEmprestimo()
+        public FrmConsultarEmprestimo()
         {
             InitializeComponent();
             emprestimo = new Emprestimo();
@@ -28,24 +28,33 @@ namespace UI
 
         private void TxtLeitor_TextChanged(object sender, EventArgs e)
         {
+            btnCancelar.Enabled = false;
+            btnDevolucao.Enabled = false;
             AtualizarGrid();
         }
 
         private void SelecionarRegistros(object sender, DataGridViewCellEventArgs e)
         {
-            var listEmprestimo = emprestimoBLL.ConsultarEmprestimo(Convert.ToString(dgvEmprestimos.Rows[e.RowIndex].Cells[1].Value));
-            foreach (Emprestimo empLeitor in listEmprestimo)
+            try
             {
-                emprestimo.ID = empLeitor.ID;
-                emprestimo.Leitor.ID = empLeitor.Leitor.ID;
-                emprestimo.Leitor.Nome = Convert.ToString(empLeitor.Leitor);
-                emprestimo.Livro.ID = empLeitor.Livro.ID;
-                emprestimo.Livro.Nome = Convert.ToString(empLeitor.Livro);
-                emprestimo.Retirada = Convert.ToString(empLeitor.Retirada);
-                emprestimo.Devolucao = Convert.ToString(empLeitor.Devolucao);
+                var listEmprestimo = emprestimoBLL.ConsultarEmprestimo(Convert.ToString(dgvEmprestimos.Rows[e.RowIndex].Cells[1].Value));
+                foreach (Emprestimo empLeitor in listEmprestimo)
+                {
+                    emprestimo.ID = empLeitor.ID;
+                    emprestimo.Leitor.ID = empLeitor.Leitor.ID;
+                    emprestimo.Leitor.Nome = Convert.ToString(empLeitor.Leitor);
+                    emprestimo.Livro.ID = empLeitor.Livro.ID;
+                    emprestimo.Livro.Nome = Convert.ToString(empLeitor.Livro);
+                    emprestimo.Retirada = Convert.ToString(empLeitor.Retirada);
+                    emprestimo.Devolucao = Convert.ToString(empLeitor.Devolucao);
+                }
+                btnCancelar.Enabled = true;
+                btnDevolucao.Enabled = true;
             }
-            btnCancelar.Enabled = true;
-            btnDevolucao.Enabled = true;
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("A coluna não é um registro valido para seleção");
+            }
         }
 
         private void BtnExcluir_Click(object sender, EventArgs e)
@@ -74,10 +83,16 @@ namespace UI
 
         private void BtnDevolucao_Click(object sender, EventArgs e)
         {
-            Devolucao FormDevolucao = new Devolucao();
+            FrmDevolucao FormDevolucao = new FrmDevolucao();
             FormDevolucao.ReceberDados(emprestimo);
             FormDevolucao.Show();
             Close();
+        }
+
+        private void FrmConsultarEmprestimo_Load(object sender, EventArgs e)
+        {
+            btnCancelar.Enabled = false;
+            btnDevolucao.Enabled = false;
         }
     }
 }

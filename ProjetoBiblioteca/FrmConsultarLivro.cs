@@ -12,11 +12,11 @@ using DTO;
 
 namespace UI
 {
-    public partial class ConsultarLivro : Form
+    public partial class FrmConsultarLivro : Form
     {
         Livro livro;
         LivroBLL livroBLL;
-        public ConsultarLivro()
+        public FrmConsultarLivro()
         {
             InitializeComponent();
             livro = new Livro();
@@ -26,19 +26,26 @@ namespace UI
         }
         private void SelecionarRegistro(object sender, DataGridViewCellEventArgs e)
         {
-            livro.ID = Convert.ToInt32(dgvLivros.Rows[e.RowIndex].Cells[0].Value);
-            livro.Nome = Convert.ToString(dgvLivros.Rows[e.RowIndex].Cells[1].Value);
-            livro.Autor = Convert.ToString(dgvLivros.Rows[e.RowIndex].Cells[2].Value);
-            livro.Genero = Convert.ToString(dgvLivros.Rows[e.RowIndex].Cells[3].Value);
-            livro.Paginas = Convert.ToInt32(dgvLivros.Rows[e.RowIndex].Cells[4].Value);
-            livro.Quantidade = Convert.ToInt32(dgvLivros.Rows[e.RowIndex].Cells[5].Value);
-            btnExcluir.Enabled = true;
-            btnAlterar.Enabled = true;
+            try
+            {
+                livro.ID = Convert.ToInt32(dgvLivros.Rows[e.RowIndex].Cells[0].Value);
+                livro.Nome = Convert.ToString(dgvLivros.Rows[e.RowIndex].Cells[1].Value);
+                livro.Autor = Convert.ToString(dgvLivros.Rows[e.RowIndex].Cells[2].Value);
+                livro.Genero = Convert.ToString(dgvLivros.Rows[e.RowIndex].Cells[3].Value);
+                livro.Paginas = Convert.ToInt32(dgvLivros.Rows[e.RowIndex].Cells[4].Value);
+                livro.Quantidade = Convert.ToInt32(dgvLivros.Rows[e.RowIndex].Cells[5].Value);
+                btnExcluir.Enabled = true;
+                btnAlterar.Enabled = true;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("A coluna não é um registro valido para seleção");
+            }
         }
 
         private void BtnAlterar_Click(object sender, EventArgs e)
         {
-            CadastrarLivro frmCadastrarLivro = new CadastrarLivro();
+            FrmCadastrarLivro frmCadastrarLivro = new FrmCadastrarLivro();
             frmCadastrarLivro.ReceberDados(livro);
             frmCadastrarLivro.Show();
             Close();

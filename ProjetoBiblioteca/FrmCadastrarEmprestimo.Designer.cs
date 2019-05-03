@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class CadastrarEmprestimo
+    partial class FrmCadastrarEmprestimo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarEmprestimo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastrarEmprestimo));
             this.label1 = new System.Windows.Forms.Label();
             this.txtLeitor = new System.Windows.Forms.TextBox();
             this.txtIDLeitor = new System.Windows.Forms.TextBox();
@@ -210,7 +210,7 @@
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
-            // CadastrarEmprestimo
+            // FrmCadastrarEmprestimo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -233,7 +233,9 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "CadastrarEmprestimo";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FrmCadastrarEmprestimo";
             this.Text = "Cadastrar Empréstimo";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLivrosLeitores)).EndInit();
             this.ResumeLayout(false);

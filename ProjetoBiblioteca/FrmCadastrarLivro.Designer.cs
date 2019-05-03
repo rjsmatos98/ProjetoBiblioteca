@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class CadastrarLivro
+    partial class FrmCadastrarLivro
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarLivro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastrarLivro));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtAutor = new System.Windows.Forms.TextBox();
@@ -177,7 +177,7 @@
             this.txtId.TabIndex = 12;
             this.txtId.Visible = false;
             // 
-            // CadastrarLivro
+            // FrmCadastrarLivro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -195,8 +195,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "CadastrarLivro";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FrmCadastrarLivro";
             this.Text = "Cadastrar Livro";
             this.ResumeLayout(false);
             this.PerformLayout();

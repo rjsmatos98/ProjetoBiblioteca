@@ -75,14 +75,15 @@ namespace DAL
 
                     while (dr.Read())
                     {
-                        Leitor leitor = new Leitor();
-
-                        leitor.ID = Convert.ToInt32(dr["Id_Leitor"]);
-                        leitor.Nome = dr["Nome"].ToString();
-                        leitor.Endereco = dr["Endereco"].ToString();
-                        leitor.Numero = Convert.ToInt32(dr["Numero"]);
-                        leitor.Telefone = dr["Telefone"].ToString();
-                        leitor.CPF = dr["CPF"].ToString();
+                        Leitor leitor = new Leitor
+                        {
+                            ID = Convert.ToInt32(dr["Id_Leitor"]),
+                            Nome = dr["Nome"].ToString(),
+                            Endereco = dr["Endereco"].ToString(),
+                            Numero = Convert.ToInt32(dr["Numero"]),
+                            Telefone = dr["Telefone"].ToString(),
+                            CPF = dr["CPF"].ToString()
+                        };
 
 
                         leitores.Add(leitor);
@@ -101,7 +102,7 @@ namespace DAL
 
             return leitores;
         }
-        public MySqlDataAdapter ExcluirLeitor(int codigoLeitor)
+        public void ExcluirLeitor(int codigoLeitor)
         {
             string deletar = @"DELETE FROM Leitor WHERE Id_Leitor='" + codigoLeitor + "';";
 
@@ -109,14 +110,7 @@ namespace DAL
 
             _cmd.ExecuteNonQuery();
 
-            string selecionar = @"SELECT Id_Leitor, Nome, Endereco, Numero, Telefone, CPF FROM Leitor";
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter(selecionar, banco.AbrirConexao());
-
-            
-
             banco.FecharConexao();
-            return adapter;
         }
     }
 }

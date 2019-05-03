@@ -14,11 +14,11 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class CadastrarLeitor : Form
+    public partial class FrmCadastrarLeitor : Form
     {
         Leitor leitor;
         LeitorBLL leitorBLL;
-        public CadastrarLeitor()
+        public FrmCadastrarLeitor()
         {
             InitializeComponent();
             leitorBLL = new LeitorBLL();
@@ -70,7 +70,7 @@ namespace UI
                         txtCPF.Clear();
                         txtNome.Focus();
                     }
-                    catch (System.FormatException)
+                    catch (FormatException)
                     {
                         MessageBox.Show("O campo Nº só pode ser preenchido com números");
                         txtNumber.Focus();
@@ -94,7 +94,7 @@ namespace UI
                 leitorBLL.AtualizarLeitor(leitor);
                 MessageBox.Show("DADOS DO LEITOR ALTERADO COM SUCESSO!");
 
-                ConsultarLeitor FormConsultarLeitor = new ConsultarLeitor();
+                FrmConsultarLeitor FormConsultarLeitor = new FrmConsultarLeitor();
                 FormConsultarLeitor.Show();
                 Close();
             }

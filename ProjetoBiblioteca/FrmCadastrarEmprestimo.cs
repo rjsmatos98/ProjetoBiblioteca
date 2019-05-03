@@ -12,14 +12,14 @@ using DTO;
 
 namespace UI
 {
-    public partial class CadastrarEmprestimo : Form
+    public partial class FrmCadastrarEmprestimo : Form
     {
         int selecao;
         Emprestimo emprestimo;
         EmprestimoBLL emprestimoBLL;
         LeitorBLL leitorBLL;
         LivroBLL livroBLL;
-        public CadastrarEmprestimo()
+        public FrmCadastrarEmprestimo()
         {
             InitializeComponent();
             emprestimo = new Emprestimo();
@@ -47,7 +47,7 @@ namespace UI
 
                     MessageBox.Show("Emprestimo cadastrado com Sucesso!");
                 }
-                catch (System.FormatException)
+                catch (FormatException)
                 {
                     MessageBox.Show("Verifique se algum campo está em branco");
                 }
@@ -81,20 +81,32 @@ namespace UI
 
         private void SelecionarRegistros(object sender, DataGridViewCellEventArgs e)
         {
-            if (selecao == 1)
+            try
             {
-                int intLeitorID = Convert.ToInt32(dgvLivrosLeitores.Rows[e.RowIndex].Cells[0].Value);
-                txtIDLeitor.Text = Convert.ToString(intLeitorID);
-                string strLeitor = Convert.ToString(dgvLivrosLeitores.Rows[e.RowIndex].Cells[1].Value);
-                lblLeitor.Text = strLeitor;
-            }
+                if (selecao == 1)
+                {
+                    txtLeitor.Clear();
+                    int intLeitorID = Convert.ToInt32(dgvLivrosLeitores.Rows[e.RowIndex].Cells[0].Value);
+                    txtIDLeitor.Text = Convert.ToString(intLeitorID);
+                    string strLeitor = Convert.ToString(dgvLivrosLeitores.Rows[e.RowIndex].Cells[1].Value);
+                    lblLeitor.Text = strLeitor;
+                    dgvLivrosLeitores.DataSource = null;
+                }
 
-            else if (selecao == 2)
+                else if (selecao == 2)
+                {
+                    txtLivro.Clear();
+                    int intLivroID = Convert.ToInt32(dgvLivrosLeitores.Rows[e.RowIndex].Cells[0].Value);
+                    txtIDLivro.Text = Convert.ToString(intLivroID);
+                    string strLivro = Convert.ToString(dgvLivrosLeitores.Rows[e.RowIndex].Cells[1].Value);
+                    lblLivro.Text = strLivro;
+                    dgvLivrosLeitores.DataSource = null;
+                }
+            }
+            catch (ArgumentOutOfRangeException)
             {
-                int intLivroID = Convert.ToInt32(dgvLivrosLeitores.Rows[e.RowIndex].Cells[0].Value);
-                txtIDLivro.Text = Convert.ToString(intLivroID);
-                string strLivro = Convert.ToString(dgvLivrosLeitores.Rows[e.RowIndex].Cells[1].Value);
-                lblLivro.Text = strLivro;
+                dgvLivrosLeitores.DataSource = null;
+                MessageBox.Show("A coluna não é um registro valido para seleção");
             }
         }
         public void AtualizarGrid()

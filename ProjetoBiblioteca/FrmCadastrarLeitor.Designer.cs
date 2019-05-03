@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class CadastrarLeitor
+    partial class FrmCadastrarLeitor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarLeitor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastrarLeitor));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtEndereco = new System.Windows.Forms.TextBox();
@@ -48,7 +48,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label1.Location = new System.Drawing.Point(35, 19);
+            this.label1.Location = new System.Drawing.Point(30, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 18);
             this.label1.TabIndex = 0;
@@ -57,15 +57,15 @@
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtNome.Location = new System.Drawing.Point(94, 17);
+            this.txtNome.Location = new System.Drawing.Point(89, 17);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(428, 24);
+            this.txtNome.Size = new System.Drawing.Size(447, 24);
             this.txtNome.TabIndex = 1;
             // 
             // txtEndereco
             // 
             this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtEndereco.Location = new System.Drawing.Point(94, 64);
+            this.txtEndereco.Location = new System.Drawing.Point(89, 64);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(308, 24);
             this.txtEndereco.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label2.Location = new System.Drawing.Point(15, 66);
+            this.label2.Location = new System.Drawing.Point(10, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 18);
             this.label2.TabIndex = 2;
@@ -96,14 +96,14 @@
             this.txtNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtNumber.Location = new System.Drawing.Point(436, 64);
             this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(86, 24);
+            this.txtNumber.Size = new System.Drawing.Size(100, 24);
             this.txtNumber.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label4.Location = new System.Drawing.Point(91, 112);
+            this.label4.Location = new System.Drawing.Point(17, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 18);
             this.label4.TabIndex = 6;
@@ -113,7 +113,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label5.Location = new System.Drawing.Point(285, 112);
+            this.label5.Location = new System.Drawing.Point(211, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 18);
             this.label5.TabIndex = 7;
@@ -122,7 +122,7 @@
             // txtTelefone
             // 
             this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtTelefone.Location = new System.Drawing.Point(164, 109);
+            this.txtTelefone.Location = new System.Drawing.Point(90, 106);
             this.txtTelefone.Mask = "(##)#####-####";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(114, 24);
@@ -131,7 +131,7 @@
             // txtCPF
             // 
             this.txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtCPF.Location = new System.Drawing.Point(328, 109);
+            this.txtCPF.Location = new System.Drawing.Point(254, 106);
             this.txtCPF.Mask = "###.###.###-##";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(118, 24);
@@ -141,7 +141,7 @@
             // 
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(287, 145);
+            this.btnSalvar.Location = new System.Drawing.Point(464, 100);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(72, 39);
             this.btnSalvar.TabIndex = 8;
@@ -154,7 +154,7 @@
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(206, 145);
+            this.button1.Location = new System.Drawing.Point(383, 100);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(72, 39);
             this.button1.TabIndex = 9;
@@ -168,17 +168,17 @@
             this.txtId.Enabled = false;
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtId.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtId.Location = new System.Drawing.Point(18, 151);
+            this.txtId.Location = new System.Drawing.Point(4, 1);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(88, 24);
+            this.txtId.Size = new System.Drawing.Size(20, 24);
             this.txtId.TabIndex = 10;
             this.txtId.Visible = false;
             // 
-            // CadastrarLeitor
+            // FrmCadastrarLeitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 192);
+            this.ClientSize = new System.Drawing.Size(546, 146);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSalvar);
@@ -192,8 +192,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "CadastrarLeitor";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FrmCadastrarLeitor";
             this.Text = "Cadastra Leitores";
             this.ResumeLayout(false);
             this.PerformLayout();

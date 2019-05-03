@@ -12,11 +12,11 @@ using BLL;
 
 namespace UI
 {
-    public partial class CadastrarLivro : Form
+    public partial class FrmCadastrarLivro : Form
     {
         private Livro livro;
         private LivroBLL livroBLL;
-        public CadastrarLivro()
+        public FrmCadastrarLivro()
         {
             InitializeComponent();
             livroBLL = new LivroBLL();
@@ -50,10 +50,7 @@ namespace UI
 
                         MessageBox.Show("LIVRO CADASTRADO COM SUCESSO!");
 
-                        txtNome.Clear();
-                        txtAutor.Clear();
-                        txtQuantidade.Clear();
-                        txtPaginas.Clear();
+                        LimparDados();
                         txtNome.Focus();
 
                     }
@@ -84,10 +81,18 @@ namespace UI
                 livroBLL.AlterarLivro(livro);
                 MessageBox.Show("DADOS DO LIVRO ALTERADO COM SUCESSO!");
 
-                ConsultarLivro frmConsultarLivro = new ConsultarLivro();
+                FrmConsultarLivro frmConsultarLivro = new FrmConsultarLivro();
                 frmConsultarLivro.Show();
                 Close();
             }
+        }
+
+        public void LimparDados()
+        {
+            txtNome.Clear();
+            txtAutor.Clear();
+            txtQuantidade.Clear();
+            txtPaginas.Clear();
         }
         public void ReceberDados(Livro livro)
         {

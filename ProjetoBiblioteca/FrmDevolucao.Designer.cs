@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class Devolucao
+    partial class FrmDevolucao
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Devolucao));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDevolucao));
             this.txtIDLeitor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtLeitor = new System.Windows.Forms.TextBox();
@@ -214,7 +214,7 @@
             this.txtLivro.Size = new System.Drawing.Size(429, 24);
             this.txtLivro.TabIndex = 24;
             // 
-            // Devolucao
+            // FrmDevolucao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -236,8 +236,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLeitor);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Devolucao";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FrmDevolucao";
             this.Text = "Devolução";
             this.Load += new System.EventHandler(this.Devolucao_Load);
             this.ResumeLayout(false);

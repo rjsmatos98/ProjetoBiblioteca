@@ -19,43 +19,43 @@ namespace UI
 
         private void CadastroLeitorClick(object sender, EventArgs e)
         {
-            CadastrarLeitor frmCadastroLeitor = new CadastrarLeitor();
+            FrmCadastrarLeitor frmCadastroLeitor = new FrmCadastrarLeitor();
             frmCadastroLeitor.Show();
         }
 
         private void ConsultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConsultarLeitor frmConsultaLeitor = new ConsultarLeitor();
+            FrmConsultarLeitor frmConsultaLeitor = new FrmConsultarLeitor();
             frmConsultaLeitor.Show();
         }
 
         private void IncluirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastrarLivro frmCadastrarLivro = new CadastrarLivro();
+            FrmCadastrarLivro frmCadastrarLivro = new FrmCadastrarLivro();
             frmCadastrarLivro.Show();
         }
 
         private void ConsultarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ConsultarLivro frmConsultarLivro = new ConsultarLivro();
+            FrmConsultarLivro frmConsultarLivro = new FrmConsultarLivro();
             frmConsultarLivro.Show();
         }
 
         private void InserirToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            CadastrarEmprestimo frmCadastrarEmprestimo = new CadastrarEmprestimo();
+            FrmCadastrarEmprestimo frmCadastrarEmprestimo = new FrmCadastrarEmprestimo();
             frmCadastrarEmprestimo.Show();
         }
 
         private void ExcluirToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Devolucao frmDevolucao = new Devolucao();
+            FrmDevolucao frmDevolucao = new FrmDevolucao();
             frmDevolucao.Show();
         }
 
         private void ConsultarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            ConsultarEmprestimo frmConsultarEmprestimo = new ConsultarEmprestimo();
+            FrmConsultarEmprestimo frmConsultarEmprestimo = new FrmConsultarEmprestimo();
             frmConsultarEmprestimo.Show();
         }
     }

@@ -31,9 +31,9 @@ namespace BLL
             return leitorDAL.ConsultarLeitor(nome);
         }
 
-        public MySqlDataAdapter ExcluirLeitor(int codigo)
+        public void ExcluirLeitor(int codigo)
         {
-            return leitorDAL.ExcluirLeitor(codigo);
+            leitorDAL.ExcluirLeitor(codigo);
         }
     }
 }

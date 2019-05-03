@@ -74,47 +74,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CadastrarEmprestimo.cs">
+    <Compile Include="FrmCadastrarEmprestimo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastrarEmprestimo.Designer.cs">
-      <DependentUpon>CadastrarEmprestimo.cs</DependentUpon>
+    <Compile Include="FrmCadastrarEmprestimo.Designer.cs">
+      <DependentUpon>FrmCadastrarEmprestimo.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastrarLivro.cs">
+    <Compile Include="FrmCadastrarLivro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastrarLivro.Designer.cs">
-      <DependentUpon>CadastrarLivro.cs</DependentUpon>
+    <Compile Include="FrmCadastrarLivro.Designer.cs">
+      <DependentUpon>FrmCadastrarLivro.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastrarLeitor.cs">
+    <Compile Include="FrmCadastrarLeitor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastrarLeitor.Designer.cs">
-      <DependentUpon>CadastrarLeitor.cs</DependentUpon>
+    <Compile Include="FrmCadastrarLeitor.Designer.cs">
+      <DependentUpon>FrmCadastrarLeitor.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarEmprestimo.cs">
+    <Compile Include="FrmConsultarEmprestimo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarEmprestimo.Designer.cs">
-      <DependentUpon>ConsultarEmprestimo.cs</DependentUpon>
+    <Compile Include="FrmConsultarEmprestimo.Designer.cs">
+      <DependentUpon>FrmConsultarEmprestimo.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarLeitor.cs">
+    <Compile Include="FrmConsultarLeitor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarLeitor.Designer.cs">
-      <DependentUpon>ConsultarLeitor.cs</DependentUpon>
+    <Compile Include="FrmConsultarLeitor.Designer.cs">
+      <DependentUpon>FrmConsultarLeitor.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConsultarLivro.cs">
+    <Compile Include="FrmConsultarLivro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarLivro.Designer.cs">
-      <DependentUpon>ConsultarLivro.cs</DependentUpon>
+    <Compile Include="FrmConsultarLivro.Designer.cs">
+      <DependentUpon>FrmConsultarLivro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Devolucao.cs">
+    <Compile Include="FrmDevolucao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Devolucao.Designer.cs">
-      <DependentUpon>Devolucao.cs</DependentUpon>
+    <Compile Include="FrmDevolucao.Designer.cs">
+      <DependentUpon>FrmDevolucao.cs</DependentUpon>
     </Compile>
     <Compile Include="Inicial.cs">
       <SubType>Form</SubType>
@@ -124,26 +124,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CadastrarEmprestimo.resx">
-      <DependentUpon>CadastrarEmprestimo.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCadastrarEmprestimo.resx">
+      <DependentUpon>FrmCadastrarEmprestimo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastrarLivro.resx">
-      <DependentUpon>CadastrarLivro.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCadastrarLivro.resx">
+      <DependentUpon>FrmCadastrarLivro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastrarLeitor.resx">
-      <DependentUpon>CadastrarLeitor.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCadastrarLeitor.resx">
+      <DependentUpon>FrmCadastrarLeitor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultarEmprestimo.resx">
-      <DependentUpon>ConsultarEmprestimo.cs</DependentUpon>
+    <EmbeddedResource Include="FrmConsultarEmprestimo.resx">
+      <DependentUpon>FrmConsultarEmprestimo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultarLeitor.resx">
-      <DependentUpon>ConsultarLeitor.cs</DependentUpon>
+    <EmbeddedResource Include="FrmConsultarLeitor.resx">
+      <DependentUpon>FrmConsultarLeitor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConsultarLivro.resx">
-      <DependentUpon>ConsultarLivro.cs</DependentUpon>
+    <EmbeddedResource Include="FrmConsultarLivro.resx">
+      <DependentUpon>FrmConsultarLivro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Devolucao.resx">
-      <DependentUpon>Devolucao.cs</DependentUpon>
+    <EmbeddedResource Include="FrmDevolucao.resx">
+      <DependentUpon>FrmDevolucao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicial.resx">
       <DependentUpon>Inicial.cs</DependentUpon>
