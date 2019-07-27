@@ -24,7 +24,7 @@ namespace DAL
             // executa o comando
 
             _cmd.ExecuteNonQuery();
-
+                
             //Fecha a conexão
 
             banco.FecharConexao();
